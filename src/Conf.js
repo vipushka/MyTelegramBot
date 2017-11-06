@@ -1,1 +1,1 @@
-export const TELEGRAM_TOKEN: string = '385163418:AAFsLb79VfIxzq5qbs7nHEITdAdNXikfviY';
+export const TELEGRAM_TOKEN: string = 'YOUT_TOKEN';
