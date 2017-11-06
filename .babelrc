@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "syntax-flow",
+    "transform-flow-strip-types",
+    "babel-plugin-transform-async-to-generator"
+  ]
+}
