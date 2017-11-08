@@ -11,18 +11,10 @@ function getInfoFromDeviceByUrl(url, msg, bot) {
         });
         resp.on('end', () => {
             const dom = new JSDOM(data);
-            resultStr = dom.window.document.getElementById('diodStatusLabel').textContent + '\n' +
+            var resultStr = dom.window.document.getElementById('diodStatusLabel').textContent + '\n' +
                 dom.window.document.getElementById('ds18b20_1Label').textContent + '\n' +
                 dom.window.document.getElementById('ds18b20_2Label').textContent + '\n' +
                 dom.window.document.getElementById('dht11Label').textContent;
-            //console.log(dom.window.document.getElementById('diodStatusLabel').textContent);
-            //console.log(dom.window.document.getElementById('diodStatus').textContent);
-            //console.log(dom.window.document.getElementById('ds18b20_1Label').textContent);
-            //console.log(dom.window.document.getElementById('ds18b20_1').textContent);
-            //console.log(dom.window.document.getElementById('ds18b20_2Label').textContent);
-            //console.log(dom.window.document.getElementById('ds18b20_2').textContent);
-            //console.log(dom.window.document.getElementById('dht11Label').textContent);
-            //console.log(dom.window.document.getElementById('dht11').textContent);
             bot.sendMessage(msg.from.id, resultStr);
         });
 

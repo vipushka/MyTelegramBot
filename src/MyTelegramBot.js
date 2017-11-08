@@ -4,6 +4,9 @@ import * as conf from './Conf';
 import {startRemind, returnChoseTimeForRemind, setBot} from "./Remind";
 import sendHelp from "./Help";
 import getInfoFromDeviceByUrl from "./Esp8266GetData";
+import getTriolanInfo from "./TriolanInfo";
+
+
 
 class MyTelegramBot {
     bot: TelegramBot;
@@ -19,6 +22,7 @@ class MyTelegramBot {
         this.bot.onText(/^\/espStatus$/i, (msg) => getInfoFromDeviceByUrl('http://192.168.1.136/gpio/status',msg,this.bot));
         this.bot.onText(/^\/espLigtOn$/i, (msg) => getInfoFromDeviceByUrl('http://192.168.1.136/gpio/1',msg,this.bot));
         this.bot.onText(/^\/espLightOff$/i, (msg) => getInfoFromDeviceByUrl('http://192.168.1.136/gpio/0',msg,this.bot));
+        this.bot.onText(/^\/triolanInfo$/i, (msg) => getTriolanInfo(msg,this.bot));
     }
 }
 
